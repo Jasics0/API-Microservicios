@@ -1,6 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
-using Newtonsoft.Json; 
+using System.Security.Authentication;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Unillanos.ArquitecturaMS.Usuarios.Model;
 
 namespace Unillanos.ArquitecturaMS.Usuarios.Service
@@ -25,7 +28,7 @@ namespace Unillanos.ArquitecturaMS.Usuarios.Service
             return result;
         }
 
-        public string post(User user)
+        public JsonResult post(User user)
         {
             User exist = get(user.user);
             if (exist.user == null)
@@ -34,15 +37,15 @@ namespace Unillanos.ArquitecturaMS.Usuarios.Service
                 var users = JsonConvert.DeserializeObject<List<User>>(json);
                 users.Add(user);
                 File.WriteAllText(_path, JsonConvert.SerializeObject(users));
-                return user.ToString();
+                return new JsonResult(new Response(user.ToString()));
             }
             {
-                return "{\"message\":\"El usuario ya existe en la BD.\"}";
+                throw new Exception("El usuario ya existe en la BD.");
             }
 
         }
         
-        public string delete(string user)
+        public JsonResult delete(string user)
         {
             User exist = get(user);
             if (exist.user != null)
@@ -58,15 +61,16 @@ namespace Unillanos.ArquitecturaMS.Usuarios.Service
                     }
                 }
                 File.WriteAllText(_path, JsonConvert.SerializeObject(users));
-                return"{\"message\":\"El usuario se eliminó de la BD.\"}";
+                return new JsonResult(new Response("Se eliminó correctamente"));
             }
+
             {
-                return "{\"message\":\"El usuario no existe en la BD.\"}";
+                throw new Exception("El usuario no se ecuentra en la BD.");
             }
 
         }
         
-        public string put(string username,User user)
+        public JsonResult put(string username,User user)
         {
             User exist = get(username);
             if (exist.user != null)
@@ -81,14 +85,18 @@ namespace Unillanos.ArquitecturaMS.Usuarios.Service
                         users[i].name=user.name;
                         users[i].lastname = user.lastname;
                         users[i].password = user.password;
+                        users[i].gender = user.gender;
+                        users[i].email = user.email;
+                        users[i].age = user.age;
+                        users[i].phone = user.phone;
                         break;
                     }
                 }
                 File.WriteAllText(_path, JsonConvert.SerializeObject(users));
-                return"{\"message\":\"El usuario se actualizó correctamente.\"}";
+                return new JsonResult(new Response("Se actualizó correctamnte el usuario."));
             }
             {
-                return "{\"message\":\"El usuario no existe en la BD.\"}";
+                throw new AuthenticationException("El usuario no se ecuentra en la BD.");
             }
 
         }

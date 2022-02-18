@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Retr0\\RiderProjects\\Unillanos.ArquitecturaMS\\Unillanos.ArquitecturaMS.Usuarios\\Unillanos.ArquitecturaMS.Usuarios.csproj": {}
+    "E:\\Projects\\GitHub\\API-Microservicios\\Unillanos.ArquitecturaMS.Usuarios\\Unillanos.ArquitecturaMS.Usuarios.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Retr0\\RiderProjects\\Unillanos.ArquitecturaMS\\Unillanos.ArquitecturaMS.Usuarios\\Unillanos.ArquitecturaMS.Usuarios.csproj": {
+    "E:\\Projects\\GitHub\\API-Microservicios\\Unillanos.ArquitecturaMS.Usuarios\\Unillanos.ArquitecturaMS.Usuarios.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Retr0\\RiderProjects\\Unillanos.ArquitecturaMS\\Unillanos.ArquitecturaMS.Usuarios\\Unillanos.ArquitecturaMS.Usuarios.csproj",
+        "projectUniqueName": "E:\\Projects\\GitHub\\API-Microservicios\\Unillanos.ArquitecturaMS.Usuarios\\Unillanos.ArquitecturaMS.Usuarios.csproj",
         "projectName": "Unillanos.ArquitecturaMS.Usuarios",
-        "projectPath": "C:\\Users\\Retr0\\RiderProjects\\Unillanos.ArquitecturaMS\\Unillanos.ArquitecturaMS.Usuarios\\Unillanos.ArquitecturaMS.Usuarios.csproj",
+        "projectPath": "E:\\Projects\\GitHub\\API-Microservicios\\Unillanos.ArquitecturaMS.Usuarios\\Unillanos.ArquitecturaMS.Usuarios.csproj",
         "packagesPath": "C:\\Users\\Retr0\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Retr0\\RiderProjects\\Unillanos.ArquitecturaMS\\Unillanos.ArquitecturaMS.Usuarios\\obj\\",
+        "outputPath": "E:\\Projects\\GitHub\\API-Microservicios\\Unillanos.ArquitecturaMS.Usuarios\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Retr0\\AppData\\Roaming\\NuGet\\NuGet.Config"
